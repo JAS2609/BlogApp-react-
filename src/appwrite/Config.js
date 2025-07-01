@@ -125,15 +125,15 @@ async createPost({ title, slug, content, featuredImage, status, userid }) {
             return false
         }
     }
-
-getFileView(fileId) {
+getFilePreview(fileId) {
     try {
-         return this.bucket.getFileView(conf.appwriteBucketId, fileId); 
+        return this.bucket.getFileView(conf.appwriteBucketId, fileId);
     } catch (e) {
         console.error("Image error:", e);
         return null;
     }
 }
+
 
 
 
