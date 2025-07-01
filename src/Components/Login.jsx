@@ -75,7 +75,7 @@ console.log("Dispatched login");
                 />
                 <Button
                 type="submit"
-                className="w-full"
+                className="w-full text-black"
                 >Sign in</Button>
             </div>
         </form>
