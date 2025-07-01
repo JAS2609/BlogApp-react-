@@ -75,7 +75,7 @@ function Signup() {
                         {...register("password", {
                             required: true,})}
                         />
-                        <Button type="submit" className="w-full text-black">
+                        <Button type="submit" className="w-full">
                             Create Account
                         </Button>
                     </div>
