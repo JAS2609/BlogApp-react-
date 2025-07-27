@@ -1,12 +1,98 @@
-# React + Vite
+# 📝 Blog Platform with React, Appwrite, and TinyMCE
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+A modern blog application built using **React**, **Appwrite** (for authentication & database), and **TinyMCE** as the rich text editor. It includes user authentication, post creation with images and formatting, theme switching (dark/light), and a dynamic post feed.
 
-Currently, two official plugins are available:
+---
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+## 🚀 Features
 
-## Expanding the ESLint configuration
+- 🔐 **User Authentication** (Login/Signup) via Appwrite
+- ✍️ **Rich Text Editing** with TinyMCE
+- 🌗 **Dark/Light Theme Toggle**
+- 🖼️ **Add Post with Images & Formatted Content**
+- 📃 **List All Posts** (only visible to logged-in users)
+- 🧼 **Minimal UI** with TailwindCSS
+- 🌍 **Routing** via React Router
+- 📦 **State Management** using Redux
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+---
+
+## 🛠️ Tech Stack
+
+| Tech        | Description                          |
+|-------------|--------------------------------------|
+| React       | Frontend UI                          |
+| Appwrite    | Backend as a Service (Auth + DB)     |
+| Redux       | State Management                     |
+| TinyMCE     | Rich Text Editor                     |
+| TailwindCSS | Styling                              |
+| React Router| Navigation                           |
+
+---
+
+## 🔧 Setup Instructions
+
+### 1. Clone the Repo
+```bash
+git clone https://github.com/your-username/your-blog-project.git
+cd your-blog-project
+```
+
+### 2. Install Dependencies
+```bash
+npm install
+```
+
+### 3. Configure Appwrite
+- Create a new Appwrite project at [cloud.appwrite.io](https://cloud.appwrite.io/)
+- Enable:
+  - **Users/Auth**
+  - **Database** → Collection: `posts`
+- Required attributes in `posts` collection:
+  - `title`: string
+  - `slug`: string
+  - `content`: string
+  - `featuredImage`: string (URL)
+  - `userId`: string
+  - `status`: string
+- Set your `.env` with Appwrite project credentials:
+```env
+VITE_APPWRITE_ENDPOINT=https://cloud.appwrite.io/v1
+VITE_APPWRITE_PROJECT_ID=your_project_id
+VITE_APPWRITE_DATABASE_ID=your_db_id
+VITE_APPWRITE_COLLECTION_ID=your_collection_id
+VITE_APPWRITE_BUCKET_ID=your_bucket_id
+```
+
+### 4. Start the Dev Server
+```bash
+npm run dev
+```
+
+---
+
+
+
+---
+
+## 📂 Folder Structure
+```
+src/
+├── appwrite/           # Appwrite service logic
+├── Components/         # Header, Footer, Editor (TinyMCE), etc.
+├── Pages/              # Login, Signup, AddPost, AllPosts
+├── store/              # Redux slice for auth
+├── ThemeContext.js     # Theme context provider
+├── App.jsx             # App with layout and routes
+└── main.jsx            # Entry point
+```
+
+---
+
+## 🙌 Acknowledgements
+
+- [Appwrite](https://appwrite.io/)
+- [TinyMCE](https://www.tiny.cloud/)
+- [Unsplash](https://unsplash.com)
+- [React + Redux Toolkit](https://redux-toolkit.js.org/)
+
