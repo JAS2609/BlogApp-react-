@@ -7,6 +7,9 @@ import {login, logout} from "./store/authSlice"
 import Header from "./Components/Header/Header"
 import Footer from "./Components/Footer/Footer"
 import { Outlet } from 'react-router-dom'
+import { ThemeProvider } from './ThemeContext'
+
+
 function App() {
   const [loading, setLoading] = useState(true)
   const dispatch = useDispatch()
@@ -22,9 +25,13 @@ function App() {
     })
     .finally(() => setLoading(false))
   }, [])
+
+
+
   
   return !loading ? (
-    <div className='min-h-screen flex flex-wrap content-between bg-gray-400'>
+  <ThemeProvider>
+     <div className="dark:bg-gray-900 dark:text-white bg-white text-black min-h-screen flex flex-col">
       <div className='w-full block'>
         <Header />
         <main>
@@ -33,6 +40,7 @@ function App() {
         <Footer />
       </div>
     </div>
+    </ThemeProvider> 
   ) : null
 }
 

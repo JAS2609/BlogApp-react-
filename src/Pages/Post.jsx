@@ -22,7 +22,7 @@ export default function Post() {
         if (slug) {
             
             appwriteService.getPost(slug).then((post) => {
-                console.log("Post from Appwrite:", post);
+               
                 if (post) setPost(post);
                 else navigate("/");
             });
