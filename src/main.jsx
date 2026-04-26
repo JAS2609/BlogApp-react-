@@ -16,8 +16,8 @@ import AddPost from './Pages/AddPost.jsx'
 import EditPost from './Pages/EditPost.jsx'
 import Post from './Pages/Post.jsx'
 
-
-const router = createBrowserRouter([
+import { createHashRouter, RouterProvider } from 'react-router-dom'
+const router = createHashRouter([
   {
     path: "/",
     element: <App />,
