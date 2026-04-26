@@ -6,7 +6,7 @@ import './index.css'
 import App from './App.jsx'
 import { Provider } from 'react-redux'
 import store from './store/configStore.js'
-import { createBrowserRouter,RouterProvider } from 'react-router-dom'
+import { RouterProvider,createHashRouter } from 'react-router-dom'
 import { AuthLayout } from './Components/index.js'
 import Home from './Pages/Home.jsx'
 import Login from './Pages/Login.jsx'
@@ -16,7 +16,6 @@ import AddPost from './Pages/AddPost.jsx'
 import EditPost from './Pages/EditPost.jsx'
 import Post from './Pages/Post.jsx'
 
-import { createHashRouter, RouterProvider } from 'react-router-dom'
 const router = createHashRouter([
   {
     path: "/",
