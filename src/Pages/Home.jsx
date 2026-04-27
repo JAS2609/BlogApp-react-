@@ -21,7 +21,7 @@ function Home() {
       <div className="flex justify-center">
         <div className="max-w-xl">
           <h1 className="text-3xl font-bold text-gray-800 dark:text-white mb-4">
-            No Posts Found!!!!!
+            No Posts Found?
           </h1>
           <p className="text-gray-500 dark:text-gray-400 text-lg">
             {`Login to view posts or check back later.`}
